@@ -25,17 +25,15 @@ public class Main {
                     ToDoList.addTask(sc);
                     break;
                 case "2":
-                    System.out.println("Введите название задачи: ");
-                    String titleIsRemove = sc.nextLine();
-                    ToDoList.removeTask(titleIsRemove);
+
+                    ToDoList.removeTask(sc);
                     break;
                 case "3":
                     ToDoList.displayTasks();
                     break;
                 case "4":
-                    System.out.println("Введите название задачи: ");
-                    String titleTaskIsCompleted = sc.nextLine();
-                    ToDoList.taskIsCompleted(titleTaskIsCompleted);
+
+                    ToDoList.taskIsCompleted(sc);
                     break;
                 case "5":
                     ToDoList.displayCompletedTasks();

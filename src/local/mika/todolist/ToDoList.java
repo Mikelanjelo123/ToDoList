@@ -23,11 +23,14 @@ public class ToDoList {
         tasks.add(task);
     }
 
-    public static void removeTask(String title) {
+    public static void removeTask(Scanner sc) {
+        System.out.println("Введите название задачи: ");
+        String title = sc.nextLine();
         for (Task task : tasks) {
             if (task.getTitle().equals(title)) {
                 tasks.remove(task);
                 System.out.println("Задача " + task + " удалена!");
+                return;
             }
         }
 
@@ -40,7 +43,9 @@ public class ToDoList {
         }
     }
 
-    public static void taskIsCompleted(String title) {
+    public static void taskIsCompleted(Scanner sc) {
+        System.out.println("Введите название задачи: ");
+        String title = sc.nextLine();
         for (Task task : tasks) {
             if (task.getTitle().equals(title)) {
                 task.setCompleted(true);
