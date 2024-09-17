@@ -62,11 +62,12 @@ public class ToDoList {
     }
 
     public static void displayCompletedTasks() {
-        System.out.println("Выполненные задачи: ");
         if (tasks.isEmpty()) {
             System.out.println("Выполненных задач нет!");
             return;
         }
+        System.out.println("Выполненные задачи: ");
+
         for (Task task : tasks) {
             if (task.isCompleted()) {
                 System.out.println(task);
