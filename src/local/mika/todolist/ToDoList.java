@@ -14,9 +14,9 @@ public class ToDoList {
         System.out.println("Введи суть задачи");
         String setDescription = sc.nextLine();
         System.out.println("Выполнено? (Да/Нет)");
-       String taskIsCompleted = sc.nextLine();
+       String taskIsCompleted = sc.nextLine().toLowerCase();
         boolean setCompleted = false;
-        if (taskIsCompleted.equals("Да")) {
+        if (taskIsCompleted.equals("да")) {
             setCompleted = true;
         }
         Task task = new Task(setTitle, setDescription, setCompleted);
