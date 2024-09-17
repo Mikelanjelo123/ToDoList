@@ -21,29 +21,16 @@ public class Main {
             String input = sc.nextLine();
 
             switch (input) {
-                case "1":
-                    ToDoList.addTask(sc);
-                    break;
-                case "2":
-
-                    ToDoList.removeTask(sc);
-                    break;
-                case "3":
-                    ToDoList.displayTasks();
-                    break;
-                case "4":
-
-                    ToDoList.taskIsCompleted(sc);
-                    break;
-                case "5":
-                    ToDoList.displayCompletedTasks();
-                    break;
-                case "6":
+                case "1" -> ToDoList.addTask(sc);
+                case "2" -> ToDoList.removeTask(sc);
+                case "3" -> ToDoList.displayTasks();
+                case "4" -> ToDoList.taskIsCompleted(sc);
+                case "5" -> ToDoList.displayCompletedTasks();
+                case "6" -> {
                     running = false;
                     System.out.println("Выход из программы.");
-                    break;
-                default:
-                    System.out.println("Неверный ввод. Попробуйте снова.");
+                }
+                default -> System.out.println("Неверный ввод. Попробуйте снова.");
             }
 
         }
