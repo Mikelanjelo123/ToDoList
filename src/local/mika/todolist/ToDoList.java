@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ToDoList {
-    private static final List<Task> tasks = new ArrayList<>();
+    private static final List<Task> TASKS = new ArrayList<>();
 
     public static void addTask(Scanner sc) {
 
@@ -20,15 +20,15 @@ public class ToDoList {
             setCompleted = true;
         }
         Task task = new Task(setTitle, setDescription, setCompleted);
-        tasks.add(task);
+        TASKS.add(task);
     }
 
     public static void removeTask(Scanner sc) {
         System.out.println("Введите название задачи: ");
         String title = sc.nextLine();
-        for (Task task : tasks) {
+        for (Task task : TASKS) {
             if (task.getTitle().equals(title)) {
-                tasks.remove(task);
+                TASKS.remove(task);
                 System.out.println("Задача " + task + " удалена!");
                 return;
             }
@@ -39,11 +39,11 @@ public class ToDoList {
 
     public static void displayTasks() {
         System.out.println("Список задач:");
-        if (tasks.isEmpty()) {
+        if (TASKS.isEmpty()) {
             System.out.println("Задач нет!");
             return;
         }
-        for (Task task : tasks) {
+        for (Task task : TASKS) {
             System.out.println(task);
         }
     }
@@ -51,7 +51,7 @@ public class ToDoList {
     public static void taskIsCompleted(Scanner sc) {
         System.out.println("Введите название задачи: ");
         String title = sc.nextLine();
-        for (Task task : tasks) {
+        for (Task task : TASKS) {
             if (task.getTitle().equals(title)) {
                 task.setCompleted(true);
                 System.out.println("Задача" + task + " выполнена!");
@@ -62,13 +62,13 @@ public class ToDoList {
     }
 
     public static void displayCompletedTasks() {
-        if (tasks.isEmpty()) {
+        if (TASKS.isEmpty()) {
             System.out.println("Выполненных задач нет!");
             return;
         }
         System.out.println("Выполненные задачи: ");
 
-        for (Task task : tasks) {
+        for (Task task : TASKS) {
             if (task.isCompleted()) {
                 System.out.println(task);
             }
